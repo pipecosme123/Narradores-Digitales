@@ -65,30 +65,38 @@ db.getConnection((err, connection) => {
 module.export = db;
 
 app.use(cors());
+app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-/*app.get("/", (req, res) => {
-    //const sqlInsert = "INSERT INTO responsables VALUES (null,?,null,?,null,?,?,null)"
-    //const sqlInsert = "INSERT INTO responsables VALUES (null,'Daniel',null,'Cosme',null,'pipecosme123','123456789',null);";
-    const sqlInsert = "INSERT INTO responsables (nombre1, nombre2, apellido1, apellido2, correo, password) VALUES ('hh32hh', null, 'hhh2hh', 'hhhhhhh2hhh', 'hhhhhhh2hhhhhhhh')";
-    db.query(sqlInsert, (err, result) => {
-        res.send("Dato Insertado2");
-    });
-});*/
+app.get("/", (req, res) => {
 
+        res.send("Dato Insertado2");
+
+});
+
+// Insertar Datos
 app.post("/api/insert", (req, res) => {
 
-    const nombre1 = req.bodyParser.nombre1;
-    const nombre2 = req.bodyParser.nombre2;
-    const apellido1 = req.bodyParser.apellido1;
-    const apellido2 = req.bodyParser.apellido2;
-    const correo = req.bodyParser.correo;
-    const password = req.bodyParser.password;
+    const nombre1 = req.body.nombre1;
+    const nombre2 = req.body.nombre2;
+    const apellido1 = req.body.apellido1;
+    const apellido2 = req.body.apellido2;
+    const correo = req.body.correo;
+    const password = req.body.password;
 
-    const sqlInsert = "INSERT INTO responsables (nombre1, nombre2, apellido1, apellido2, correo, password) VALUES (?,null,?,null,?,?,?);";
+    const sqlInsert = "INSERT INTO responsables (nombre1, nombre2, apellido1, apellido2, correo, password) VALUES (?,null,?,null,?,?);";
     db.query(sqlInsert, [nombre1,apellido1,correo,password], (err, result) => {
-        console.log(result);
+        console.log(err);
     })
+});
+
+// Seleccionar todos los datos
+
+app.get('/api/get', (req, res) => {
+    const sqlSelect = "SELECT * FROM responsables;";
+    db.query(sqlSelect, (err, result) => {
+        res.send(result);
+    });
 });
 
 app.listen(3001, () => {
