@@ -86,7 +86,7 @@ app.post("/api/insert", (req, res) => {
 
     const sqlInsert = "INSERT INTO responsables (nombre1, nombre2, apellido1, apellido2, correo, password) VALUES (?,null,?,null,?,?);";
     db.query(sqlInsert, [nombre1,apellido1,correo,password], (err, result) => {
-        console.log(err);
+        console.log(result);
     })
 });
 
