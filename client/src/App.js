@@ -3,6 +3,7 @@ import './App.css';
 import SignUp from './pages/SignUp';
 import 'materialize-css/dist/css/materialize.min.css';
 import Windows from './components/Windows';
+import Canvas from './components/Canvas/Canvas'
 
 function App() {
   return (
