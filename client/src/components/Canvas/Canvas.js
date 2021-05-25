@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import P5 from 'p5';
 
 class Canvas extends Component{
     constructor(props){
@@ -8,25 +9,24 @@ class Canvas extends Component{
 
     Sketch = (p) => {
         p.setup =() =>{
-
+            p.createCanvas(500,500);
         }
         p.draw = () =>{
-
+            p.background('grey');
+            p.ellipse(150, 100, 100, 100);
         }
     }
 
     componentDidMount(){
-        this.myP5 = new p5(this.Sketch, this.myRef.current)
+        this.myp5 = new P5(this.Sketch, this.myRef.current)
     };
 
     render(){
         return(
             <div ref={this.myRef}>
-                
+
             </div>
         );
-    }
-
-
-
-}
+    };
+};
+export default Canvas;

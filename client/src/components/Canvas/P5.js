@@ -4,7 +4,7 @@ const s = (sketch) =>{
     let y = 100;
 
     sketch.setup = () => {
-        sketch.createCanvas(200,200);
+        sketch.createCanvas(50,50);
     };
     sketch.draw = () =>{
         sketch.background(0);
@@ -12,4 +12,4 @@ const s = (sketch) =>{
         sketch.rect(x,y,50,50);
     };
 };
-let myp5 = new p5(s);
+let myp5 = new P5(s);
