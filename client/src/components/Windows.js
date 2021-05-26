@@ -14,7 +14,7 @@ class Windows extends Component {
     }
 
     render() {
-        const person;
+       // const person;
         return (
             <div>
                 <a className="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
