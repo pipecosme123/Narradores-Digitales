@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Hombre from './../../img/hombre1.svg';
 //import Avatar1 from './../img/hombre.svg';
 import P5 from 'p5';
 
@@ -11,13 +12,15 @@ class Canvas extends Component{
     };
 
     Sketch = (p) => {
+    
         p.setup =() =>{
             p.createCanvas(500,500);
             p.background('grey');
-            img = p.loadImage('./../img/hombre.svg');
+            img = p.loadImage(Hombre);
+            //p.image(img,0,0);
         }
         p.draw = () =>{           
-            p.image(img, 0, 0);
+            p.image(img,0,0);
             p.ellipse(150, 100, 100, 100);
         }
     }
