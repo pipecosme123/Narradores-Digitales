@@ -1,3 +1,4 @@
+/*
 import P5, { Image } from 'p5';
 const s = (sketch) =>{
     let x = 100;
@@ -16,3 +17,4 @@ const s = (sketch) =>{
     };
 };
 let myp5 = new P5(s);
+*/

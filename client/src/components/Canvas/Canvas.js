@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Hombre from './../../img/hombre1.svg';
-//import Avatar1 from './../img/hombre.svg';
 import P5 from 'p5';
 
 let img;
